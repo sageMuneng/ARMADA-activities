@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Survey Form</title>
+</head>
+<body>
+    <h1>Survey Form</h1>
+
+    <form action="/submit_form" method="post">
+        <section>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname">
+        </section>
+
+        <section>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email">
+        </section>
+
+        <br>
+
+        <label for="satisfactory">How Satisfied are you with our service?</label>
+        <section>
+            <input type="radio" id="very_satisfied" name="satisfactory" value="very_satisfied">
+            <label for="very_satisfied">Very Satisfied</label>
+        </section>
+        <section>
+            <input type="radio" id="satisfied" name="satisfactory" value="satisfied">
+            <label for="satisfied">Satisfied</label>
+        </section>
+        <section>
+            <input type="radio" id="neutral" name="satisfactory" value="neutral">
+            <label for="neutral">Neutral</label>
+        </section>
+        <section>
+            <input type="radio" id="dissatisfied" name="satisfactory" value="dissatisfied">
+            <label for="dissatisfied">Dissatisfied</label>
+        </section>
+        <section>
+            <input type="radio" id="very_dissatisfied" name="satisfactory" value="very_dissatisfied">
+            <label for="very_dissatisfied">Very Dissatisfied</label>
+        </section>
+
+        <br>
+
+        <label for="features">What features do you value most?</label>
+        <section>
+            <input type="checkbox" id="ease_of_use" name="ease_of_use">
+            <label for="ease_of_use">Ease of Use</label>
+        </section>
+        <section>
+            <input type="checkbox" id="design" name="design">
+            <label for="design">Design</label>
+        </section>
+        <section>
+            <input type="checkbox" id="customer_support" name="customer_support">
+            <label for="customer_support">Customer Support</label>
+        </section>
+
+        <br>
+
+        <section>
+            <label for="user_role">What best describes you?</label>
+            <select name="user_role" id="user_role">
+                <option value="student">Student</option>
+                <option value="professional">Professional</option>
+                <option value="hobbyist">Hobbyist</option>
+                <option value="other">Other</option>
+            </select>
+        </section>
+
+        <br>
+
+        <label for="feedback">Additional feedback:</label>
+        <section>
+            <textarea type="message" id="feedback" name="feedback"></textarea>
+        </section>
+
+        <br>
+
+        <button type="submit">
+            Submit
+        </button>
+        
+    </form>
+
+</body>
+</html>
