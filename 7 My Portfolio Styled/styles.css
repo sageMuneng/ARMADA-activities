@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(40, 42, 57);
+    background: linear-gradient( rgb(25, 26, 35), rgb(113, 118, 141));
     font-family: 'Gothic A1', sans-serif;
     padding: 3px;
 }
