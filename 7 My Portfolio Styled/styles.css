@@ -1,0 +1,106 @@
+body {
+    background-color: rgb(40, 42, 57);
+    font-family: 'Gothic A1', sans-serif;
+    padding: 3px;
+}
+
+header{
+    border-radius: 5px;
+    background-color: rgb(50, 54, 71);
+    padding: 5px;
+}
+
+header h1{
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+header ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+header li a{
+    color: whitesmoke;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 30px;
+    padding: 10px;
+}
+
+header li a:hover {
+    color: whitesmoke;
+    text-decoration: none;
+    background-color: rgb(248, 124, 89);
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+#about_me_section{
+    background-color: whitesmoke;
+    color: rgb(40, 42, 57);
+    padding: 10px;
+    line-height: 30px;
+}
+
+h3{
+    color: rgb(248, 124, 89);
+}
+
+#projetcs_section{
+    color: whitesmoke;
+}
+
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th{
+    border: 1px solid whitesmoke;
+    text-align: left;
+    padding: 8px;
+}
+
+#contact_me_section form{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(248, 124, 89);
+    color: whitesmoke;
+}
+
+#contact_me_section input{
+    margin: 5px;
+    border: 2px solid rgb(248, 124, 89);
+    background-color: rgb(245, 245, 245);
+    border-radius: 3px;
+    padding: 5px;
+}
+
+#submit_form{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(248, 124, 89, 0.542);
+    color: whitesmoke;
+}
+
+#submit_form:hover{
+    background-color: rgb(248, 124, 89);
+    transition: ease-in-out 0.3s;
+    
+}
+
+footer{
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid whitesmoke;
+    display: flex;
+    font-size: smaller;
+    color: whitesmoke;
+    justify-content: center;
+    align-self: center;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome to My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about_me_section">
+            <h3>About Me</h3>
+            <p>Hi! My name is Gene Matthew T. Aban, a BSIT student of Urdaneta City University. Im passionate about
+                learning how things work and how it is processed. This portfolio showcases my projects and my skills.
+            </p>
+            <img src="#" alt="A placeholder image for my portfolio">
+        </section>
+
+        <section id="projetcs_section">
+            <h3>My Projects</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Description</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5 Speed: Auto Care Vehicle Repair and Maintenance System</td>
+                        <td>A hybrid system for client and management for vehicle repair booking </td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td>ASSEMBL.IO</td>
+                        <td>A small mobile game for assembling mother board components build with Flutter</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td>Agristock</td>
+                        <td>Mobile based wide range e-commerce for farmers</td>
+                        <td>2023</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact_me_section">
+            <form action="/submit_form" method="post">
+                <h3>Contact Me</h3>
+                <div>
+                    <label for="full_name">Full Name: </label>
+                    <input type="text" id="full_name" name="full_name">
+                </div>
+                <div>
+                    <label for="email">Email Address: </label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <br>
+
+                <fieldset>
+                    <legend>How did you hear about this portfolio</legend>
+                    <div>
+                        <input type="radio" name="hear" id="friend" value="friend">
+                        <label for="friend">Friend</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="hear" id="socmed" value="socmed">
+                        <label for="socmed">Social Media</label>
+                    </div>
+                    <div><input type="radio" name="hear" id="seo" value="seo">
+                        <label for="seo">Search Engine</label>
+                    </div>
+                    <div><input type="radio" name="hear" id="other" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend>Skills/Interests</legend>
+                    <div>
+                        <input type="checkbox" name="webdev" id="webdev" value="webdev">
+                        <label for="webdev">Web Development</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="appdev" id="appdev" value="appdev">
+                        <label for="appdev">App Development</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="film_editing" id="film_editing" value="film_editing">
+                        <label for="film_editing">Film Editing</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="videography" id="videography" value="videography">
+                        <label for="videography">Video Graphy</label>
+                    </div>
+                </fieldset>
+
+                <p>Comments or Messages:</p>
+                <textarea name="comments" id="comments"></textarea>
+
+                <br>
+                <br>
+
+                <button type="submit" id="submit_form">Submit</button>
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        &copy; Gene Matthew Aban 2025
+    </footer>
+</body>
+
+</html>
+
+<!-- this code took me 1 hour, 40 mins to code -->
+<!-- the challenges that I encounter is choosing a design for my portfolio specially the color, and my favorite style that I added to the page is the hover effect -->
