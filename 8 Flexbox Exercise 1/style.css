@@ -1,6 +1,7 @@
 body {
     width: 1200px;
-    margin: 10 auto;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 header {
@@ -10,21 +11,21 @@ header {
 
 main {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
 }
 
 aside {
     background-color: #9b59b6;
     height: 300px;
     width: 300px;
-    margin: 20px 20px 20px 0px ;
+    margin: 20px 10px 20px 0px ;
 }
 
 section {
     background-color: #1abc9c;
     height: 300px;
     width: 876px;
-    margin: 20px 0px 20px 20px ;
+    margin: 20px 0px 20px 10px ; 
 }
 
 footer {
