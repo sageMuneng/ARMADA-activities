@@ -21,16 +21,16 @@ nav{
     justify-content: space-between;
 }
 
-#right_section{
+.right_section{
     display: flex;
     gap: 15px;
 }
 
-#netflix_icon{
+.netflix_icon{
     height: 40px;
 }
 
-#language{
+.language{
     background-color: rgba(0, 0, 0, 0.176);
     border: 1px solid white;
     border-radius: 4px;
@@ -39,7 +39,7 @@ nav{
     font-size: inherit;
 }
 
-#signIn{
+.signIn{
     background-color: rgb(229, 9, 20);
     text-decoration: none;
     font-size: 0.875rem;
@@ -48,7 +48,7 @@ nav{
     border-radius: 4px;
 }
 
-#main_section{
+.main_section{
     height: 80%;
     gap: 20px;
     text-align: center;
@@ -58,19 +58,19 @@ nav{
     flex-direction: column;
 }
 
-#main_section h1{
+.main_section h1{
     font-size: 6vh;
     font-weight: 900;
     margin: 0px;
 }
 
-#get_started_form{
+.get_started_form{
     display: flex;
     gap: 10px;
     width: 30vw;
 }
 
-#email_address{
+.email_address{
     flex-grow: 1;
     border-radius: 5px;
     border: 1px solid lightgray;
@@ -78,12 +78,12 @@ nav{
     background-color: rgba(0, 0, 0, 0.512);
 }
 
-#email_address::placeholder{
+.email_address::placeholder{
     font-size: 1.2rem;
     color: lightgrey;
 }
 
-#get_started{
+.get_started{
     border: none;
     border-radius: 5px;
     font-size: 1.5rem;
@@ -147,7 +147,7 @@ footer{
     background-color: black;
 }
 
-#get_started_form_footer{
+.get_started_form_footer{
     display: flex;
     gap: 10px;
     width: 60vw;
