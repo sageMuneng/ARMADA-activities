@@ -45,22 +45,22 @@ li a:hover{
     width: 100%;
     display: flex;
 }
-#search_input{
+#search_button{
+    display: flex;
+    justify-content: start;
+    align-items: start;
     border-radius: 5px;
     border: 1px solid #a27ee8;
     font-family: Arial, sans-serif;
-    padding: 7px 50px 7px 7px;
+    padding: 7px 170px 7px 7px;
     font-size: 15px;
     font-weight: 600;
     background-color: #6327db;
     color: #c3adf1;
 }
-#search_input::placeholder{
-    color: #c3adf1;
-}
 
-#search_input:focus{
-    outline-color: #a876c7;
+#search_button:hover{
+    outline-color: 4px solid #c3adf1;
     border-color: #ffe484;
 }
 
@@ -117,9 +117,12 @@ body{
 #bottom_navigations{
     display: flex;
     justify-content: center;
-    gap: 10px;
-    list-style: none;
+    gap: 40px;
     color: #aeb2b6;
+}
+
+#bottom_navigations li:first-child {
+    list-style: none;
 }
 
 #bottom_navigations a{
