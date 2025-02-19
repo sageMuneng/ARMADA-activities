@@ -17,7 +17,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 1;
-    
 }
 
 header nav {
@@ -75,6 +74,7 @@ header ul {
     background-color: white;
     padding: 8px 10px;
     border-radius: 6px;
+    text-decoration: none;
 }
 
 .log_in:hover {
@@ -88,14 +88,12 @@ header ul {
     color: white;
     padding: 8px 10px;
     border-radius: 6px;
+    text-decoration: none;
 }
 
 .sign_up:hover {
     border: 1px solid #155ca2;
     background-color: #155ca2;
-    color: white;
-    padding: 8px 10px;
-    border-radius: 6px;
 }
 
 .main_content {
@@ -103,7 +101,6 @@ header ul {
     padding: 0px 10% 60px 10%;
     display: flex;
     flex-direction: row;
-    
 }
 
 .side_panel {
@@ -127,6 +124,7 @@ header ul {
 .side_panel a,
 .side_panel li,
 .side_panel strong {
+    width: 100%;
     padding: 4px;
     font-size: 13px;
     display: flex;
@@ -135,6 +133,10 @@ header ul {
     gap: 10px;
     color: black;
     text-decoration: none;
+}
+
+.side_panel a{
+    padding: 5px;
 }
 
 .side_panel a:hover {
@@ -178,10 +180,8 @@ header ul {
     padding: 20px;
     color: white;
     background-size: contain;
-    /* Adjust the size of the background image */
     background-image: url('assets/background-image.png');
     background-position: center;
-    /* Align the background image to center */
 }
 
 .visit_community_description p {
@@ -212,7 +212,7 @@ header ul {
 
 .visit_community_image img {
     width: 100%;
-    
+
 }
 
 /* teams */
@@ -251,7 +251,7 @@ header ul {
     gap: 20px;
 }
 
-.explore_team_button{
+.explore_team_button {
     border: 1px solid #1B75D0;
     background-color: #1B75D0;
     color: white;
@@ -259,7 +259,7 @@ header ul {
     border-radius: 6px;
 }
 
-.team_action_center a{
+.team_action_center a {
     color: #155ca2;
 }
 
@@ -283,7 +283,7 @@ header ul {
     border-radius: 10px;
 }
 
-.overflowai_container_description{
+.overflowai_container_description {
     flex-shrink: 1;
     padding: 30px;
     display: flex;
@@ -291,13 +291,13 @@ header ul {
     justify-content: space-evenly;
 }
 
-.overflowai_container_description p{
+.overflowai_container_description p {
     color: white;
     font-size: 17px;
     font-weight: 500;
 }
 
-.overflowai_image{
+.overflowai_image {
     padding-top: 30px;
     display: flex;
     justify-content: end;
@@ -305,7 +305,7 @@ header ul {
     flex-shrink: .6;
 }
 
-.overflowai_button{
+.overflowai_button {
     width: 200px;
     border: none;
     padding: 7px;
@@ -316,7 +316,7 @@ header ul {
 
 .overflowai_image img {
     width: 100%;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
 }
 
 /* advertisement and api section */
@@ -329,7 +329,7 @@ header ul {
 }
 
 .advertising_container,
-.api_container{
+.api_container {
     width: 50%;
     padding: 30px;
     border: 1px solid lightgray;
@@ -339,14 +339,14 @@ header ul {
 }
 
 .advertising_container p,
-.api_container p{
+.api_container p {
     font-size: 0.9vw;
     color: #3b4045;
     font-weight: 500;
 }
 
 .advertising_container button,
-.api_container button{
+.api_container button {
     width: 200px;
     border: 1px solid #1B75D0;
     background-color: #1B75D0;
@@ -355,7 +355,7 @@ header ul {
     border-radius: 6px;
 }
 
-.advertisement_actions{
+.advertisement_actions {
     display: flex;
     flex-grow: 1;
     justify-content: start;
@@ -363,13 +363,13 @@ header ul {
     gap: 20px;
 }
 
-.advertisement_actions a{
+.advertisement_actions a {
     color: #155ca2;
 }
 
 /* Careers */
 
-.careers_container{
+.careers_container {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -378,15 +378,20 @@ header ul {
     padding: 0px;
 }
 
-.careers_container section{
+.careers_container section {
     border: 1px solid lightgray;
     border-radius: 10px;
     padding: 30px;
-    
     position: relative;
 }
 
-.careers_container button{
+.careers_description p{
+    font-size: 0.9vw;
+    color: #3b4045;
+    font-weight: 500;
+}
+
+.careers_container button {
     width: 200px;
     border: 1px solid #1B75D0;
     background-color: #1B75D0;
@@ -395,7 +400,7 @@ header ul {
     border-radius: 6px;
 }
 
-.careers_image{
+.careers_image {
     position: absolute;
     right: 0px;
     bottom: 0px;
