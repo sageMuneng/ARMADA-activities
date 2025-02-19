@@ -1,69 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore GitHub · GitHub</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
-            <img src="assets/icons/github_logo.png" alt="Github">
-            <ul>
+            <ul class="nav_left_section">
+                <li><a href="https://github.com/"><img src="assets/icons/github_logo.png" alt="Github"></a></li>
                 <li><button>Product<img src="assets/icons/dropdown_icon.png" alt=""></button></li>
                 <li><button>Solutions<img src="assets/icons/dropdown_icon.png" alt=""></button></li>
                 <li><button>Resources<img src="assets/icons/dropdown_icon.png" alt=""></button></li>
                 <li><button>Open Sources<img src="assets/icons/dropdown_icon.png" alt=""></button></li>
                 <li><button>Enterprise<img src="assets/icons/dropdown_icon.png" alt=""></button></li>
-                <li><a href="">Pricing<img src="assets/icons/dropdown_icon.png" alt=""></a></li>
+                <li><a href="https://github.com/pricing">Pricing</a></li>
             </ul>
-            <button>
-                <img src="assets/icons/search_icon_left.png" alt="">
-                Search or jump to...
-                <img src="assets/icons/search_icon_right.png" alt="">
-            </button>
-            <button>
-                Sign in
-            </button>
-            <button>
-                Sign up
-            </button>
+            <section class="nav_right_section">
+                <form action="#" method="post" class="search_input">
+                    <img src="assets/icons/search_icon_left.png" alt="">
+                    <input type="search" placeholder="Search or jump to...">
+                    <img src="assets/icons/search_icon_right.png" alt="">
+                </form>
+                <a href="https://github.com/login" class="sign_in">
+                    Sign in
+                </a>
+                <a href="https://github.com/signup" class="sign_up">
+                    Sign up
+                </a>
+            </section>
         </nav>
     </header>
     <main>
-        <nav>
+        <nav class="body_nav">
             <ul>
-                <li><a href="#">Explore</a></li>
-                <li><a href="#">Topics</a></li>
-                <li><a href="#">Trending</a></li>
-                <li><a href="#">Collections</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">GitHub Sponsors</a></li>
+                <li><a href="https://github.com/explore">Explore</a></li>
+                <li><a href="https://github.com/topics">Topics</a></li>
+                <li><a href="https://github.com/trending">Trending</a></li>
+                <li><a href="https://github.com/collections">Collections</a></li>
+                <li><a href="https://github.com/events">Events</a></li>
+                <li><a href="https://github.com/sponsors/explore">GitHub Sponsors</a></li>
             </ul>
         </nav>
-        <section>
+        <section class="main_content_container">
+            <div class="spacer"></div>
             <div class="main_content">
                 <h2>Here's what's popular on GitHub today...</h2>
+                <ul>
+                    <li>
+                        <img class="article_image" src="assets/game-off-2024.png" alt="">
+                        <div class="article_description">
+                            <h5 class="article_author"><img src="assets/icons/github_micro_icon.png" alt="">Game Bytes</h5>
+                            <h4 class="article_description_heading">Top-rated games from Game Off 2024</h4>
+                            <p>Another year, another incredible GitHub Game Off—and this one was secrets-ational! With
+                                over 500 submissions, participants turned the theme of "secrets" into an extraordinary
+                                showcase of creativity, humor, and mind-boggling mechanics. Play the top-rated games
+                                now!</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collection">
+                            <h5 class="collection_author"><img src="assets/icons/github_micro_icon.png" alt="">Collection recommended by GitHub</h5>
+                            <section class="collection_body">
+                                <div class="collecion_image">#</div>
+                                <div class="collection_description">
+                                    <h4 class="collection_description_heading">Game Engines</h4>
+                                    <p>Frameworks for building games across multiple platforms.</p>
+                                    <a href="https://github.com/collections">See the 57 items in this collection ></a>
+                                </div>
+                            </section>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <aside class="trending_developers">
-
+                <ul class="trending_developers_list">
+                    <li class="table_heading">
+                        <img src="assets/icons/tele.png" alt="">
+                        <h5>Trending developers</h5>
+                    </li>
+                    <li class="developer_card">
+                        <img class="developer_profile" src="assets/cup.jfif" alt="">
+                        <div class="dev_detail">
+                            <h4>
+                                <a href="https://github.com/syssi">Sebastian Muszynski</a>
+                            </h4>
+                            <span>syssi</span>
+                            <a href="https://github.com/syssi/esphome-jk-bms"><img src="assets/icons/bookmark.png" alt="">esphome-jk-bms</a>
+                        </div>
+                    </li>
+                    <li class="developer_card">
+                        <img class="developer_profile" src="assets/falcon.jfif" alt="">
+                        <div class="dev_detail">
+                            <h4>
+                                <a href="https://github.com/EricLBuehler">Eric Buehler</a>
+                            </h4>
+                            <span>EricLBuehler</span>
+                            <a href="https://github.com/EricLBuehler/mistral.rs"><img src="assets/icons/bookmark.png" alt="">mistral.rs</a>
+                        </div>
+                    </li>
+                    <li class="developer_card">
+                        <img class="developer_profile" src="assets/meow.jfif" alt="">
+                        <div class="dev_detail">
+                            <h4>
+                                <a href="https://github.com/bghira">Bagheera</a>
+                            </h4>
+                            <span>bghira</span>
+                            <a href="https://github.com/bghira/SimpleTuner"><img src="assets/icons/bookmark.png" alt="">SimpleTuner</a>
+                        </div>
+                    </li>
+                    <li class="developer_card">
+                        <img class="developer_profile" src="assets/squares.png" alt="">
+                        <div class="dev_detail">
+                            <h4>
+                                <a href="https://github.com/randombit">Jack Lloyd</a>
+                            </h4>
+                            <span>randombit</span>
+                            <a href="https://github.com/randombit/botan"><img src="assets/icons/bookmark.png" alt="">botan</a>
+                        </div>
+                    </li>
+                    <li class="table_footer">
+                        <a href="https://github.com/trending/developers">See more trending developers ></a>
+                    </li>
+                </ul>
             </aside>
         </section>
     </main>
     <footer>
-        <a href="#"><img src="assets/icons/github_mini_icon.png" alt=""></a>
+        <a href="https://github.com/"><img src="assets/icons/github_mini_icon.png" alt=""></a>
         <ul>
             <li>&copy; 2025 Github, Inc.</li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Security</a></li>
-            <li><a href="#">Status</a></li>
-            <li><a href="#">Docs</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="https://docs.github.com/site-policy/github-terms/github-terms-of-service">Terms</a></li>
+            <li><a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">Privacy</a></li>
+            <li><a href="https://github.com/security">Security</a></li>
+            <li><a href="https://www.githubstatus.com/">Status</a></li>
+            <li><a href="https://docs.github.com/">Docs</a></li>
+            <li><a href="https://support.github.com/?tags=dotcom-footer">Contact</a></li>
             <li><a href="#">Manage cookies</a></li>
             <li><a href="#">Do not share my personal information</a></li>
         </ul>
     </footer>
 </body>
+
 </html>
