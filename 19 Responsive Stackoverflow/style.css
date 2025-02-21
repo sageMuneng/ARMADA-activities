@@ -1,0 +1,518 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    position: relative;
+}
+
+header {
+    border-top: 3px solid #e7700d;
+    border-bottom: 1px solid #d7dadd;
+    background-color: white;
+    padding: 0px 10% 0px 10%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.short_logo {
+    display: none;
+}
+
+header ul {
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 2px;
+}
+
+.nav_about_link,
+.nav_product_button,
+.nav_overflowai_link {
+    color: #636B74;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 12px;
+}
+
+.nav_about_link:hover,
+.nav_product_button:hover,
+.nav_overflowai_link:hover {
+    background-color: #e3e6e8;
+    border-radius: 20px;
+}
+
+.search_icon {
+    display: none;
+}
+
+.search_input_form {
+    flex-grow: 1;
+}
+
+.search_input_field {
+    border-radius: 7px;
+    padding: 7.8px 9.1px 7.8px 32px;
+    border: 1px solid hsl(210, 9%, 75%);
+    color: black;
+    width: 100%;
+}
+
+.search_input_field:focus-visible {
+    outline: 2px solid #1b75d0;
+    outline-offset: 2px;
+}
+
+/* outline button style */
+.log_in {
+    border: 1px solid #155ca2;
+    color: #1B75D0;
+    background-color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.log_in:hover {
+    background-color: #d6e8fa;
+}
+
+/* filled button style */
+.sign_up {
+    border: 1px solid #1B75D0;
+    background-color: #1B75D0;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.sign_up:hover {
+    border: 1px solid #155ca2;
+    background-color: #155ca2;
+}
+
+.main_content {
+    height: 100%;
+    padding: 0px 10% 60px 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+.side_panel {
+    flex: none;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    position: fixed;
+    top: 45px;
+    left: 10%;
+}
+
+.side_panel ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    list-style: none;
+}
+
+.side_panel a,
+.side_panel li,
+.side_panel strong {
+    width: 100%;
+    padding: 4px;
+    font-size: 13px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.side_panel a {
+    padding: 5px;
+}
+
+.side_panel a:hover {
+    background-color: #0000000c;
+}
+
+/* main panel ----------------*/
+
+.main_content {
+    width: auto;
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* community card */
+.visit_community_container {
+    display: flex;
+    flex-direction: row;
+    background-color: #f9fafa;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+
+.visit_community_description {
+    flex-grow: 1;
+    padding: 0px 0px 20px 50px;
+}
+
+.visit_community_description h1,
+.visit_community_description span {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 2.8vw;
+    color: #3b4045;
+}
+
+.visit_community_description span {
+    background-repeat: no-repeat;
+    padding: 20px;
+    color: white;
+    background-size: contain;
+    background-image: url('assets/background-image.png');
+    background-position: center;
+}
+
+.visit_community_description p {
+    font-size: 0.9vw;
+    color: #3b4045;
+    font-weight: 500;
+}
+
+.visit_community_action_section {
+    margin-top: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.visit_community_action_section a {
+    text-decoration: none;
+    color: #155ca2;
+}
+
+.visit_community_image {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visit_community_image img {
+    width: 100%;
+
+}
+
+/* teams */
+.team_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.team_container h4 {
+    font-size: 15px;
+    color: #636B74;
+}
+
+.team_container section {
+    display: flex;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.team_description {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.team_description p {
+    font-size: 0.9vw;
+    color: #3b4045;
+    font-weight: 500;
+}
+
+.team_action_center {
+    margin-top: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.explore_team_button {
+    border: 1px solid #1B75D0;
+    background-color: #1B75D0;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+.team_action_center a {
+    color: #155ca2;
+}
+
+.team_image {
+    padding-top: 30px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    flex-shrink: 1;
+}
+
+.team_image img {
+    width: 90%
+}
+
+/* OVERFLOW AI */
+.overflowai_container {
+    display: flex;
+    flex-direction: row;
+    background-color: #3b4045;
+    border-radius: 10px;
+}
+
+.overflowai_container_description {
+    flex-shrink: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.overflowai_container_description p {
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.overflowai_image {
+    padding-top: 30px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    flex-shrink: .6;
+}
+
+.overflowai_button {
+    width: 200px;
+    border: none;
+    padding: 7px;
+    color: white;
+    border-radius: 5px;
+    background-color: #e7700d;
+}
+
+.overflowai_image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* advertisement and api section */
+.ad_n_api_container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-content: center;
+}
+
+.advertising_container,
+.api_container {
+    width: 50%;
+    padding: 30px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.advertising_container p,
+.api_container p {
+    font-size: 0.9vw;
+    color: #3b4045;
+    font-weight: 500;
+}
+
+.advertising_container button,
+.api_container button {
+    width: 200px;
+    border: 1px solid #1B75D0;
+    background-color: #1B75D0;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+.advertisement_actions {
+    display: flex;
+    flex-grow: 1;
+    justify-content: start;
+    align-items: end;
+    gap: 20px;
+}
+
+.advertisement_actions a {
+    color: #155ca2;
+}
+
+/* Careers */
+
+.careers_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+    padding: 0px;
+}
+
+.careers_container section {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+}
+
+.careers_description p {
+    font-size: 0.9vw;
+    color: #3b4045;
+    font-weight: 500;
+}
+
+.careers_container button {
+    width: 200px;
+    border: 1px solid #1B75D0;
+    background-color: #1B75D0;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+.careers_image {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 27vw;
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0px 10px 0px 10px;
+    }
+
+    .search_icon {
+        display: flex;
+        justify-content: end;
+        flex-grow: 1;
+    }
+
+    .short_logo {
+        display: inline;
+    }
+
+    .search_input_form,
+    .full_logo,
+    .nav_about_link,
+    .nav_overflowai_link,
+    .side_panel {
+        display: none;
+    }
+
+    .visit_community_container,
+    .team_container,
+    .overflowai_container,
+    .ad_n_api_container,
+    .careers_container {
+        margin: 10px;
+    }
+
+    .ad_n_api_container {
+        display: block;
+    }
+
+    .advertising_container,
+    .api_container {
+        width: auto;
+        margin-bottom: 10px;
+
+    }
+}
+
+@media (min-width:481px) and (max-width: 1023px) {
+    header {
+        padding: 0px 10px 0px 10px;
+    }
+
+    .short_logo,
+    .nav_about_link,
+    .nav_overflowai_link{
+        display: none;
+    }
+
+    .main_content {
+        padding: 0px 0px 60px 18%;
+    }
+
+    .log_in,
+    .sign_up{
+       text-wrap: nowrap; 
+    }
+
+    .visit_community_container,
+    .team_container,
+    .overflowai_container,
+    .ad_n_api_container,
+    .careers_container {
+        margin: 10px;
+    }
+
+    .ad_n_api_container {
+        display: block;
+    }
+
+    .advertising_container,
+    .api_container {
+        width: auto;
+        margin-bottom: 10px;
+    }
+
+    .side_panel{
+        left: 0px;
+        width: 20%;
+    }
+
+    .main_content{
+        width: 80%;
+        margin-left: 12vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .side_panel {
+        left: 9%;
+    }
+    .main_content {
+        padding: 0px 10% 60px 18%;
+    }
+}
