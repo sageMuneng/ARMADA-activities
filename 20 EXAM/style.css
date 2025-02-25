@@ -1,0 +1,256 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+
+.top_navigation {
+    padding: 0.5% 3%;
+    background-color: #002056;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.smapc_logo {
+    width: 170px;
+}
+
+.search_container {
+    margin-left: 30px;
+    flex-grow: 2;
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.search_input {
+    padding-left: 20px;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    background-color: #ff000000;
+    font-weight: 500;
+    font-size: 18px;
+    color: #3a2a2f;
+}
+
+.search_input::placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    color: #3a2a2f;
+}
+
+.search_button {
+    padding: 10px 15px 10px 15px;
+    border: none;
+    background-color: #f17d21;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.top_nav_link {
+    flex-grow: 1;
+    margin-left: 30px;
+}
+
+.top_nav_link ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+
+.top_nav_link li {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_navbar_sign_up span {
+    display: block;
+}
+
+.top_nav_link li:nth-child(2) {
+    border-left: 1px solid #253b61;
+    border-right: 1px solid #253b61;
+}
+
+.top_navbar_sign_up,
+.top_navbar_your_cart,
+.top_navbar_contact_us {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+
+/* bottom nav */
+.bottom_navigation {
+    padding: 0.5% 3%;
+    background-color: white;
+}
+
+.bottom_navigation ul {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    gap: 40px;
+}
+
+.bottom_navigation a {
+    color: #3a2a2f;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* main */
+main {
+    width: 100vw;
+}
+
+.image_banner img {
+    width: 100%;
+}
+
+.categories_container,
+.exclusives_container {
+    padding: 0.5% 3%;
+}
+
+.categories_container h2,
+.exclusives_container h2 {
+    color: #3a2a2f;
+    font-weight: 400;
+}
+
+.categories_container ul,
+.exclusives_container ul {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories img {
+    width: 85%;
+    border-radius: 100%;
+}
+
+.exclusives_container ul{
+    overflow-x: auto;
+    scrollbar-width: none; 
+}
+
+.exclusive_nav {
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+}
+
+.exclusive_nav a {
+    color: #3a2a2f;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.exclusive_items {
+    width: 257px;
+    height: 442;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin: 0px 40px 0px 40px;
+}
+
+.product_title {
+    color: #3a2a2f;
+    font-weight: 700;
+    font-size: 18px;
+}
+.product_subtitle {
+    color: #3a2a2f;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.product_price_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.before_after_price{
+    color:  black;
+    font-size: 25px;
+    text-align: start;
+}
+
+.product_price_after{
+    margin: 0px;
+}
+.product_price_before{
+    font-size: 20px;
+    color: lightgray;
+    text-decoration: line-through;
+    margin: 0px;
+}
+
+.save{
+    color: red;
+    font-size: 20px;
+}
+
+.services_section{
+    padding: 1% 10%;
+}
+
+.services_section ul{
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services_section ul li{
+    display: flex;
+}
+
+.service_icon{
+    height: 10%;
+    width: 10%;
+}
+
+/* footer */
+footer{
+    color: white;
+    background-color: #333232;
+    text-align: center;
+    padding: 2%;
+}
