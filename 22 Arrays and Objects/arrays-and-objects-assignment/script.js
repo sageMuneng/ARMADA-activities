@@ -4,7 +4,7 @@ let book = {
     author: "J.R.R. Tolkien",
     pages: 310,
     isRead: false,
-}
+};
 
 for(let key in book){
     console.log(key + ": " + book[key]);
@@ -33,21 +33,21 @@ let movies = [
         director : "George Miller",
         year: 2015,
     }
-]
+];
 
-console.log(movies[1].title)
+console.log(movies[1].title);
 
 let movie4 = {
     title: "The Dark Knight",
     director : "Christopher Nolan",
     year: 2008,
-}
+};
 
-movies.push(movie4)
+movies.push(movie4);
 
-movies[0].year = 2023
+movies[0].year = 2023;
 
-console.log(movies)
+console.log(movies);
 
 // task 3-------------------------------------
 
@@ -55,13 +55,13 @@ let student = {
     name: "Gene Matthew Aban",
     age: 22,
     subjects: ["Web Developtment", "Advance Mobile Aapplication Development", "Mobile Development Application"],
-}
+};
 
-console.log(student.subjects[0])
+console.log(student.subjects[0]);
 
-student.subjects.push("Data Structures and Algorithms")
+student.subjects.push("Data Structures and Algorithms");
 
-console.log(student)
+console.log(student);
 
 // task 4-------------------------------------
 
@@ -146,13 +146,13 @@ let recipe = {
         },
     ],
     isvegetarian: false
-}
+};
 
 recipe.ingredients.push({
     name: "raw egg",
     quantity: "1 piece"
-})
+});
 
-console.log(recipe.ingredients[1].name)
+console.log(recipe.ingredients[1].name);
 
-console.log(recipe)
+console.log(recipe);
