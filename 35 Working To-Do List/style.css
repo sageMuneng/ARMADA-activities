@@ -1,23 +1,22 @@
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 100vh;
     background-color: #f1f1f1;
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
 
-main{
+main {
     padding: 20px;
     border-radius: 10px;
     width: 50%;
     background-color: white;
-    box-shadow:  1px 5px 5px #00000044;
+    box-shadow: 1px 5px 5px #00000044;
 }
 
-#todo_heading{
+#todo_heading {
     text-align: center;
     padding: 15px;
     background-color: #007bff;
@@ -25,7 +24,7 @@ main{
     border-radius: 5px;
 }
 
-#form{
+#form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,22 +32,22 @@ main{
     border-radius: 5px;
 }
 
-#task_iput{
+#task_input {
     flex-grow: 1;
     border: none;
-    border-radius: 15px;
+    border-radius: 5px 0px 0px 5px;
     padding: 15px;
 }
 
-#add_task_button{
+#add_task_button {
     border: none;
     background-color: #007bff;
     color: white;
     padding: 15px;
-    border-radius:  0px 5px 5px 0px;
+    border-radius: 0px 5px 5px 0px;
 }
 
-ul{
+ul {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -56,19 +55,40 @@ ul{
     gap: 15px;
 }
 
-li:nth-child(odd){
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+
     border: 1px solid lightgray;
-    padding: 15px;
     border-radius: 5px;
     text-align: center;
     background-color: #dbeef4;
+
+
+    button {
+        padding: 10px 15px;
+        background-color: red;
+        border: none;
+        color: white;
+        border-radius: 5px;
+    }
 }
 
-li:nth-child(2){
-    border: 1px solid lightgray;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    background-color: #a9d08e;
-    text-decoration: line-through;
+.notif_container_list{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    li{
+        border: none;
+        background-color: rgb(186, 254, 118);
+        border-radius: 5px;
+        padding: 10px;
+        
+        button{
+            background-color: none;
+        }
+    }
 }

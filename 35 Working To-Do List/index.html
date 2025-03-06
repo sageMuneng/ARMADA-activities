@@ -7,14 +7,16 @@
 <body>
     <main>
         <h2 id="todo_heading">My To-Do List</h2>
-        <form action="#" method="post" id="form">
-            <input type="text" name="task" id="task_iput" placeholder="Enter your task here...">
-            <button type="submit" id="add_task_button">Add Task</button>
-        </form>
-        <ul>
-            <li>Learn Css</li>
+        <section id="form">
+            <input type="text" name="task_input" id="task_input" placeholder="Enter your task here...">
+            <button id="add_task_button">Add Task</button>
+        </section>
+        <ul id="todo_list_container">
+            <!-- <li><span>Learn Css</span><button>Remove</button></li>
             <li>Complete Assignment</li>
-            <li>Watch a Turorial</li>
+            <li>Watch a Turorial</li> -->
+        </ul>
+        <ul class="notif_container_list" id="notif_container_list">
         </ul>
     </main>
     <script src="script.js"></script>
