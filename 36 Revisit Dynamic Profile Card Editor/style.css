@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile_card{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    align-items: center;
+    
+    img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+section{
+    width: 40%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin: 10px;
+    text-align: center;
+
+    label{
+        text-align: start;
+    }
+
+    input{
+        height: 30px;
+    }
+
+}
+.update_button{
+    width: 20%;
+    height: 40px;
+}
