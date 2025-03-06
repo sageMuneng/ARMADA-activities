@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    input{
+        height: 20px;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+}
+.current_bal_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_section button{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.action_notif{
+    display:none;
+    color: green;
+    font-weight: 600;
+}
