@@ -1,42 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <section class="profile_card" id="profile_card">
-        <img src="" id="user_profile" alt="Profile Image">
-        <h2 class="user_name" id="user_name">
-            enter name
-        </h2>
-        <p class="user_bio" id="user_bio">
-            enter bio
-        </p>
-    </section>
-    <section>
-        <label for="update_name">Update Name:</label>
-        <input type="text" name="update_name" id="update_name">
-        <button onclick="updateName('user_name','update_name')"> Update Name</button>
-    </section>
-    <section>
-        <label for="update_bio">Update Bio:</label>
-        <input type="text" name="update_bio" id="update_bio">
-        <button onclick="updateName('user_bio','update_bio')"> Update Bio</button>
-    </section>
-    <section>
-        <label for="update_img_url">Update Image URL:</label>
-        <input type="text" name="update_img_url" id="update_img_url">
-        <button onclick="updateProfile()"> Update Image URL</button>
-    </section>
-    <section>
-        <label for="change_bg">Change Background</label>
-        <input type="color" name="change_bg" id="change_bg">
-        <button onclick="updateBG()"> Change Background</button>
-    </section>
-    <p class="feedback" id="feedback"></p>
+    <button onclick="showNotif()">Show Notification</button>
+    <ul class="notif_container_list" id="notif_container_list">
+    </ul>
+
     <script src="script.js"></script>
 </body>
 </html>
