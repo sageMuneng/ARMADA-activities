@@ -49,3 +49,17 @@ main{
     color: green;
     font-weight: 600;
 }
+
+.transaction_history_container{
+    list-style: none;
+    padding: 0px;
+    width: 100%;
+    li{
+        margin-top: 5px;
+        width: 100%;
+        text-decoration: none;
+        background-color: lightgray;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
