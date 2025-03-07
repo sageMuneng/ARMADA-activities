@@ -8,6 +8,8 @@ current_balance_text.innerText = ` $${current_balance}`;
 
 let money_input = document.getElementById('balance_input')
 
+let setNotif = document.getElementById('action_notif');
+
 document.getElementById('deposit_button').addEventListener('click', () => {
     if (money_input.value && parseFloat(money_input.value) > 0) {
         current_balance += parseFloat(money_input.value);
@@ -56,7 +58,6 @@ document.getElementById('withdraw_button').addEventListener('click', () => {
     }
 });
 
-let setNotif = document.getElementById('action_notif');
 function showStatus(isSuccess, msg) {
     setNotif.style.display = "block";
     setNotif.style.color = isSuccess ? "green" : "red";
