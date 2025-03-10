@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Fireflies</title>
+    <style>
+        body {
+            background-color: black;
+            padding: 10px;
+            width: 90vw;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            color: white;
+            z-index: 1;
+        }
+
+        .firefly {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Catch the Fireflies!</h1>
+    <img src="assets/firefly1.gif" class="firefly">
+    <img src="assets/firefly2.gif" class="firefly">
+    <img src="assets/firefly3.gif" class="firefly">
+    <img src="assets/firefly4.gif" class="firefly">
+
+    <script>
+        // Select all fireflies
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+
+        let fireflies = document.querySelectorAll(".firefly");
+
+        let effects = ["assets/boom.png", "assets/kapow.png", "assets/splat.png"];
+        let firefliesSource = ["assets/firefly1.gif","assets/firefly2.gif","assets/firefly3.gif","assets/firefly4.gif"];
+
+        // Attach event listener to each firefly
+        fireflies.forEach(firefly => {
+            firefly.addEventListener("click", function () {
+                this.src = effects[Math.floor(Math.random() * effects.length)];
+                
+                setTimeout(() => {
+                    this.style.transition = "transform 0.1s";
+                    this.style.transform = "scale(0)";
+                }, 500);
+                
+                setTimeout(() => {
+                    this.style.visibility = "hidden";
+                }, 1000);
+                setTimeout(() => {
+                    this.src = firefliesSource[Math.floor(Math.random() * firefliesSource.length)];
+                    this.style.position = "absolute";
+                    this.style.top = Math.random() * height + "px";
+                    this.style.left = Math.random() * width + "px";
+                    this.style.visibility = "visible";
+                    
+                    this.style.transition = "transform 0.1s";
+                    this.style.transform = "scale(1)";
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+
+</html>
