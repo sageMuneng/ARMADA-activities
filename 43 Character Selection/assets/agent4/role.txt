@@ -1,0 +1,1 @@
+<span class="sc-80c251a1-0 bwEDxa role-icon icon icon-initiator icon-initiator" role="img" title="initiator-icon" aria-label="initiator-icon" data-testid="role-icon"></span>

@@ -1,0 +1,1 @@
+<span class="sc-80c251a1-0 bwEDxa role-icon icon icon-sentinel icon-sentinel" role="img" title="sentinel-icon" aria-label="sentinel-icon" data-testid="role-icon"></span>
