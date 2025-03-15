@@ -1,0 +1,70 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+body{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.character_preview{
+    text-align: center;
+    ul{
+        list-style-type: none;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0px;
+        
+        
+        li:nth-child(1){
+            position: relative;
+            top: 62px;
+        }
+        li:nth-child(2){
+            position: relative;
+            top: 0px;
+        }
+        li:nth-child(3){
+            position: relative;
+            bottom: 30px;
+        }
+        li:nth-child(4){
+            position: relative;
+            bottom: 80px;
+        }
+    }
+    img{
+        width: 60%;
+    }
+}
+
+.armor_row_sets{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    ul{
+        list-style-type: none;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+    li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img{
+        width: 60px;
+    }
+}
