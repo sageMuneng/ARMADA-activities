@@ -1,5 +1,5 @@
 public class logicalOperatorsGMA {
-    public static void main(String args[]){
+    public static void main(String[] args){
         int credit_score = 760;
         double annual_income = 50100;
 

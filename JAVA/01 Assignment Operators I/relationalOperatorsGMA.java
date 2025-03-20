@@ -1,5 +1,5 @@
 public class relationalOperatorsGMA {
-    public static void main(String args[]){
+    public static void main(String[] args){
         int x = 11;
         int y = 4;
         System.out.println(x + " == " + y + " : " + (x == y));
