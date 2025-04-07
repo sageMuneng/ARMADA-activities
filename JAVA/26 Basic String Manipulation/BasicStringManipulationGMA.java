@@ -21,5 +21,7 @@ public class BasicStringManipulationGMA{
         }
 
         System.out.println("Initials: " + intitials.toString());
+
+        scanner.close();
     }
 }
