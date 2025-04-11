@@ -69,6 +69,6 @@ public class Main {
         executive.department = "Finance";
         executive.companyCar = "BMW X5";
         System.out.println("\nIntroducing Executive:");
-        executive.introduce();Mastering Abstraction
+        executive.introduce();
     }
 }
