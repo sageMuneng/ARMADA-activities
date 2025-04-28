@@ -12,13 +12,13 @@ interface Archivable {
 
 class Student implements Archivable {
 
-    String studentID;
-    String name;
-    List<Subject> subjects;
-    boolean isArchived;
+    private String studentID;
+    private String name;
+    private List<Subject> subjects;
+    private boolean isArchived;
 
     public Student(String name, String studentID) {
-        this.name = name.toLowerCase();
+        this.name = name;
         this.studentID = studentID;
         this.subjects = new ArrayList<>();
         this.isArchived = false;
@@ -28,12 +28,20 @@ class Student implements Archivable {
         this.subjects.add(subject);
     }
 
+    public List<Subject> getStudentSubjects() {
+        return this.subjects;
+    }
+
     public String getStudentID() {
         return this.studentID;
     }
 
     public String getStudentName() {
         return this.name;
+    }
+
+    public void setStudentName(String updated_name) {
+        this.name = updated_name;
     }
 
     public double calculateGPA() {
@@ -84,19 +92,19 @@ class Subject {
 class Transcript {
 
     public static void displayTranscript(Student student) {
-        System.out.println("\n--- Transcript for " + student.name.toUpperCase() + " ---");
+        System.out.println("\n--- Transcript for " + student.getStudentName().toUpperCase() + " ---");
         System.out.println("Student ID: " + student.getStudentID());
         System.out.println("Student Name: " + student.getStudentName());
         System.out.println("\nSubjects:");
-        if (student.subjects.isEmpty()) {
+        if (student.getStudentSubjects().isEmpty()) {
             System.out.println("No subjects found for this student.");
             return;
         } else {
             double totalGrade = 0.0;
-            int totalSubjects = student.subjects.size();
+            int totalSubjects = student.getStudentSubjects().size();
             System.out.printf("%-10s | %-30s | %-5s\n", "CODE", "DESCRIPTION", "GRADE");
             System.out.println("-------------------------------------------");
-            for (Subject subject : student.subjects) {
+            for (Subject subject : student.getStudentSubjects()) {
                 totalGrade += subject.getGrade();
                 System.out.printf("%-10s | %-30s | %-5.1f\n", subject.getCode(), subject.getDescription(), subject.getGrade());
             }
@@ -132,7 +140,7 @@ public class SRMS {
         for (Student student : listOfStudents) {
             if (student.getStudentID().equals(studentID)) {
                 System.out.println("Student already exists. Updating details.");
-                student.name = name;
+                student.setStudentName(name);
                 return;
             }
         }
@@ -149,7 +157,7 @@ public class SRMS {
         for(Student list_studentIDs : listOfStudents) {
             if (list_studentIDs.getStudentID().equals(studentID)) {
                 studentFound = true;
-                System.out.println("\nStudent found: (" + list_studentIDs.name.toUpperCase() + ")");
+                System.out.println("\nStudent found: (" + list_studentIDs.getStudentName().toUpperCase() + ")");
                 String add_more = "y";
                 while (add_more.equalsIgnoreCase("y")) {
                     
@@ -180,7 +188,7 @@ public class SRMS {
                     }
                     System.out.println("\nSubject added successfully.\n\n");
 
-                    System.out.println("Do you want to more add a subject? (y/n): ");
+                    System.out.println("Do you want to add more subject? (y/n): ");
                     add_more = scanner.nextLine();
                     if (add_more.equalsIgnoreCase("n")) {
                         break;
@@ -228,15 +236,15 @@ public class SRMS {
                 double gpa1 = 0.0;
                 double gpa2 = 0.0;
     
-                for (Subject subject : listOfStudents.get(j).subjects) {
+                for (Subject subject : listOfStudents.get(j).getStudentSubjects()) {
                     gpa1 += subject.getGrade();
                 }
-                gpa1 = gpa1 / listOfStudents.get(j).subjects.size();
+                gpa1 = gpa1 / listOfStudents.get(j).getStudentSubjects().size();
     
-                for (Subject subject : listOfStudents.get(j + 1).subjects) {
+                for (Subject subject : listOfStudents.get(j + 1).getStudentSubjects()) {
                     gpa2 += subject.getGrade();
                 }
-                gpa2 = gpa2 / listOfStudents.get(j + 1).subjects.size();
+                gpa2 = gpa2 / listOfStudents.get(j + 1).getStudentSubjects().size();
     
                 if (gpa1 < gpa2) {
                     Student temp = listOfStudents.get(j);
@@ -256,9 +264,9 @@ public class SRMS {
         System.out.println("\n\nArchiving students with GPA >= 3.5.");
         for (Student student : listOfStudents) {
             double totalGrade = 0.0;
-            int totalSubjects = student.subjects.size();
+            int totalSubjects = student.getStudentSubjects().size();
             if (totalSubjects > 0) {
-                for (Subject subject : student.subjects) {
+                for (Subject subject : student.getStudentSubjects()) {
                     totalGrade += subject.getGrade();
                 }
                 double gpa = totalGrade / totalSubjects;
@@ -313,10 +321,10 @@ public class SRMS {
             BufferedWriter writer = new BufferedWriter(new FileWriter("records.txt"));
             for (Student student : listOfStudents) {
                 String string_subjects = ""; 
-                for (int i = 0; i < student.subjects.size(); i++) {
-                    Subject subject = student.subjects.get(i);
+                for (int i = 0; i < student.getStudentSubjects().size(); i++) {
+                    Subject subject = student.getStudentSubjects().get(i);
                     string_subjects += subject.getCode() + "," + subject.getDescription() + "," + subject.getGrade();
-                    if (i < student.subjects.size() - 1) {
+                    if (i < student.getStudentSubjects().size() - 1) {
                         string_subjects += "~";
                     }
                 }
@@ -331,7 +339,7 @@ public class SRMS {
             System.out.println("Permission denied. Try again later");
         }
         catch (IOException e) {
-            System.out.println("An error occurred, try again later ");
+            System.out.println("An error occurred, try again later " + e);
         }
     }
     public static void main(String[] args) {
