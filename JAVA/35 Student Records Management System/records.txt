@@ -1,4 +1,0 @@
-20211225,caezar v aban|C001,OJT,4.0~C002\,Web Dev,3.56~C003,Java,3.56
-20211222,gene matthew aban|C001 ,OJT,4.0~C002,Java Programming,3.8~C003,Web Development,4.0
-20211224,gene matthan|C001,OJT,3.4~C001,Web Development,3.78
-20211223,gene marc aban|C001,OJT,3.0
