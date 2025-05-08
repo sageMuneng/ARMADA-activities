@@ -1,3 +1,6 @@
-001,Gene Matthew Aban|C001,OJT,3.8~C002,Java Programming,3.9~C003,Web Development,4.0
-002,James Bond|C001,OJT,3.7~C002,Java Programming,3.6~C003,Web Development,3.7
-003,Anya|C001,OJT,2.7
+0003,Anya,false|C001,OJT,2.7
+0006,Caezar Aban,false|
+0004,Gene Marc Aban,true|C001,OJT,3.7~C002,Java Programming,4.0
+0005,Gene Marc Aban,false|
+0001,Gene Matthew Aban,true|C001,OJT,3.8~C002,Java Programming,3.9~C003,Web Development,4.0
+0002,James Bond,true|C001,OJT,3.7~C002,Java Programming,3.6~C003,Web Development,3.7

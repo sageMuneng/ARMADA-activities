@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 interface Archivable {
+
     void archive();
 }
 
@@ -15,13 +16,13 @@ class Student implements Archivable {
     private String studentID;
     private String name;
     private List<Subject> subjects;
-    private boolean isArchived;
+    private boolean isArchived; // if this student is archived di na need idisplay sa archive
 
-    public Student(String name, String studentID) {
+    public Student(String name, String studentID, boolean archived) {
         this.name = name;
         this.studentID = studentID;
         this.subjects = new ArrayList<>();
-        this.isArchived = false;
+        this.isArchived = archived;
     }
 
     public void addSubject(Subject subject) {
@@ -55,13 +56,15 @@ class Student implements Archivable {
         return totalGrade / subjects.size();
     }
 
+    public boolean getIsArchived() {
+        return this.isArchived;
+    }
+
     @Override
     public void archive() {
-        if (!isArchived) {
-            isArchived = true;
+        if (!this.isArchived) {
+            this.isArchived = true;
             System.out.println("Archiving student: " + name.toUpperCase() + " (GPA: " + String.format("%.2f", calculateGPA()) + ")");
-        } else {
-            System.out.println("Student " + name.toUpperCase() + " is already archived.");
         }
     }
 }
@@ -81,9 +84,11 @@ class Subject {
     public String getCode() {
         return code;
     }
+
     public String getDescription() {
         return description;
     }
+
     public double getGrade() {
         return grade;
     }
@@ -115,38 +120,82 @@ class Transcript {
 }
 
 public class SRMS {
-    private static List<Student> listOfStudents= new ArrayList<>();
+
+    private static List<Student> listOfStudents = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
     private static void main_menu() {
 
         System.out.println("\n--- Student Records Management ---");
-        System.out.println("1. Add/Update Student");
-        System.out.println("2. Add Subject to Student");
-        System.out.println("3. Display Transcript");
-        System.out.println("4. Sort Students (by Name)");
-        System.out.println("5. Sort Students (by GPA)");
-        System.out.println("6. Archive Students (GPA >= 3.5)");
-        System.out.println("7. Save and Exit");
+        System.out.println("1. Add Student");
+        System.out.println("2. Update Student");
+        System.out.println("3. Add Subject to Student");
+        System.out.println("4. Display Transcript");
+        System.out.println("5. Sort Students (by Name)");
+        System.out.println("6. Sort Students (by GPA)");
+        System.out.println("7. Archive Students (GPA >= 3.5)");
+        System.out.println("8. Save and Exit");
     }
 
-    private static void AddUdateStudent() {
-        System.out.println("\n--- Add/Update Student ---");
-        System.out.println("Enter Student ID: ");
-        String studentID = scanner.nextLine();
+    // fix this class 
+    private static void AddStudent() {
+        System.out.println("\n--- Add Student ---");
+        // System.out.println();
+        System.out.println("Total Students: " + listOfStudents.size());
+
         System.out.println("Enter Student Name: ");
         String name = scanner.nextLine();
 
+        String studentID = "1";
+        if (listOfStudents.size() == 0) {
+            studentID = "0001";
+        } else if (listOfStudents.size() > 0 && listOfStudents.size() < 10) {
+            studentID = "000" + (listOfStudents.size() + 1);
+        } else if (listOfStudents.size() > 9 && listOfStudents.size() < 100) {
+            studentID = "00" + (listOfStudents.size() + 1);
+        } else if (listOfStudents.size() >= 100 && listOfStudents.size() < 1000) {
+            studentID = "0" + (listOfStudents.size() + 1);
+        } else {
+            studentID = String.valueOf(listOfStudents.size() + 1);
+        }
+
+        listOfStudents.add(new Student(name, studentID, false));
+        System.out.println("\n-------------------------------------------");
+        System.out.println("Student added successfully!.");
+        System.out.println("-------------------------------------------");
+        System.out.println("Student ID: " + studentID);
+        System.out.println("Student Name: " + name);
+        System.out.println("-------------------------------------------\n");
+    }
+
+    private static void UpdateStudent() {
+        System.out.println("\n--- Update Student ---");
+        // System.out.println();
+        System.out.printf("%-10s | %-30s\n", "STUDENT ID", "NAME");
+        System.out.println("-------------------------------------------");
+        for (Student student : listOfStudents) {
+            System.out.printf("%-10s | %-30s\n", student.getStudentID(), student.getStudentName());
+        }
+        System.out.println("-------------------------------------------\n");
+
+        System.out.println("Enter Student ID: ");
+        String studentID = scanner.nextLine();
+        boolean studentFound = false;
+
         for (Student student : listOfStudents) {
             if (student.getStudentID().equals(studentID)) {
-                System.out.println("Student already exists. Updating details.");
+                System.out.println("Update Student Name: ");
+                String name = scanner.nextLine();
+
                 student.setStudentName(name);
+                studentFound = true;
+                System.out.println("\nStudent updated successfully.\n");
                 return;
             }
         }
-        
-        listOfStudents.add(new Student(name, studentID));
-        System.out.println("\nStudent added successfully.\n");
+        if (!studentFound) {
+            System.out.println("\nStudent not found.\n");
+        }
     }
 
     private static void addSubjectToStudent() {
@@ -154,24 +203,26 @@ public class SRMS {
         String studentID = scanner.nextLine();
         boolean studentFound = false;
 
-        for(Student list_studentIDs : listOfStudents) {
+        for (Student list_studentIDs : listOfStudents) {
             if (list_studentIDs.getStudentID().equals(studentID)) {
                 studentFound = true;
                 System.out.println("\nStudent found: (" + list_studentIDs.getStudentName().toUpperCase() + ")");
                 String add_more = "y";
+
                 while (add_more.equalsIgnoreCase("y")) {
-                    
+
                     System.out.println("Enter Subject Code: ");
                     String code = scanner.nextLine();
                     System.out.println("Enter Subject Description: ");
-                    String description = scanner.nextLine();    
+                    String description = scanner.nextLine();
 
-                    boolean validGrade = false;    
-                    while(!validGrade){
+                    boolean validGrade = false;
+
+                    while (!validGrade) {
                         try {
                             System.out.println("Enter Subject Grade (0.0 - 4.0): ");
                             double grade = scanner.nextDouble();
-            
+
                             if (grade >= 0.0 && grade <= 4.0) {
                                 // Add the subject to the student 
                                 list_studentIDs.addSubject(new Subject(code, description, grade));
@@ -223,7 +274,7 @@ public class SRMS {
     private static void sortByName() {
         listOfStudents.sort((s1, s2) -> s1.getStudentName().compareToIgnoreCase(s2.getStudentName()));
         System.out.println("\n\nStudents sorted by name.");
-        for(Student student : listOfStudents) {
+        for (Student student : listOfStudents) {
             System.out.println(student.getStudentName());
         }
     }
@@ -235,17 +286,17 @@ public class SRMS {
             for (int j = 0; j < listOfStudents.size() - i - 1; j++) {
                 double gpa1 = 0.0;
                 double gpa2 = 0.0;
-    
+
                 for (Subject subject : listOfStudents.get(j).getStudentSubjects()) {
                     gpa1 += subject.getGrade();
                 }
                 gpa1 = gpa1 / listOfStudents.get(j).getStudentSubjects().size();
-    
+
                 for (Subject subject : listOfStudents.get(j + 1).getStudentSubjects()) {
                     gpa2 += subject.getGrade();
                 }
                 gpa2 = gpa2 / listOfStudents.get(j + 1).getStudentSubjects().size();
-    
+
                 if (gpa1 < gpa2) {
                     Student temp = listOfStudents.get(j);
                     listOfStudents.set(j, listOfStudents.get(j + 1));
@@ -254,18 +305,19 @@ public class SRMS {
             }
         }
 
-        for(Student student : listOfStudents) {
+        for (Student student : listOfStudents) {
             System.out.println(student.getStudentName());
         }
 
     }
 
     private static void archiveStudents() {
-        System.out.println("\n\nArchiving students with GPA >= 3.5.");
+        System.out.println("\nArchive students with GPA >= 3.5");
+        boolean studentFound = false;
         for (Student student : listOfStudents) {
             double totalGrade = 0.0;
             int totalSubjects = student.getStudentSubjects().size();
-            if (totalSubjects > 0) {
+            if (totalSubjects > 0 && !student.getIsArchived()) {
                 for (Subject subject : student.getStudentSubjects()) {
                     totalGrade += subject.getGrade();
                 }
@@ -273,54 +325,59 @@ public class SRMS {
                 if (gpa >= 3.5) {
                     student.archive();
                 }
+                studentFound = true;
             }
+        }
+
+        if (studentFound) {
+            System.out.println("\nNo students found with GPA >= 3.5");
+        } else {
+            System.out.println("\nArchiving completed.");
         }
     }
 
     private static void loadFromFile() {
         try (BufferedReader br = new BufferedReader(new FileReader("records.txt"))) {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    String[] data = line.split("\\|");
-                    String[] studentData = data[0].split(",");
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split("\\|");
+                String[] studentData = data[0].split(",");
 
-                    String studentID = studentData[0];
-                    String studentName = studentData[1];
+                String studentID = studentData[0];
+                String studentName = studentData[1];
+                boolean isStudentArchived = studentData[2].equals("true");
 
-                    Student student = new Student(studentName, studentID);
+                Student student = new Student(studentName, studentID,isStudentArchived);
 
+                if (data.length > 1 && data[1].length() > 1 && !data[1].isEmpty()) {
+                    String[] subjectsData = data[1].split("~");
+                    for (String subjectData : subjectsData) {
+                        String[] subjectDetails = subjectData.split(",");
 
-                    if (data.length > 1 && data[1].length() > 1 && !data[1].isEmpty()) {
-                        String[] subjectsData = data[1].split("~");
-                        for (String subjectData : subjectsData) {
-                            String[] subjectDetails = subjectData.split(",");
-
-                            String code = subjectDetails[0];
-                            String description = subjectDetails[1];
-                            double grade = Double.parseDouble(subjectDetails[2]);
-                            student.addSubject(new Subject(code, description, grade));
-                        }
+                        String code = subjectDetails[0];
+                        String description = subjectDetails[1];
+                        double grade = Double.parseDouble(subjectDetails[2]);
+                        student.addSubject(new Subject(code, description, grade));
                     }
-
-                    listOfStudents.add(student);
                 }
+
+                listOfStudents.add(student);
+            }
             System.out.println("Data loaded successfully from file.");
-        }catch (NoSuchFileException e) {
+        } catch (NoSuchFileException e) {
             System.out.println("File not found");
-        } 
-        catch (SecurityException e) {
+        } catch (SecurityException e) {
             System.out.println("Permission denied. Try again later");
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("An error occurred, try again later ");
         }
     }
 
     private static void saveToFile() {
-        try{
+        try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("records.txt"));
             for (Student student : listOfStudents) {
-                String string_subjects = ""; 
+                String string_subjects = "";
                 for (int i = 0; i < student.getStudentSubjects().size(); i++) {
                     Subject subject = student.getStudentSubjects().get(i);
                     string_subjects += subject.getCode() + "," + subject.getDescription() + "," + subject.getGrade();
@@ -328,56 +385,61 @@ public class SRMS {
                         string_subjects += "~";
                     }
                 }
-                writer.write(student.getStudentID() + "," + student.getStudentName() + "|" + string_subjects+ "\n");
+                writer.write(student.getStudentID() + "," + student.getStudentName() + "," + student.getIsArchived() + "|" + string_subjects + "\n");
             }
             writer.close();
             System.out.println("Data saved successfully to file.");
         } catch (NoSuchFileException e) {
             System.out.println("File not found");
-        } 
-        catch (SecurityException e) {
+        } catch (SecurityException e) {
             System.out.println("Permission denied. Try again later");
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("An error occurred, try again later " + e);
         }
     }
+
     public static void main(String[] args) {
         loadFromFile();
         String choice = "";
         System.out.println("\nWelcome to the Student Records Management System");
 
-        while (choice != "7") {
+        while (choice != "8") {
             main_menu();
             System.out.println("\nEnter your choice: ");
 
             choice = scanner.nextLine();
 
+            // separate option for add and update
             switch (choice) {
                 case "1":
-                    AddUdateStudent();
+                    // if adding print all student count
+                    AddStudent();
                     break;
                 case "2":
-                    addSubjectToStudent();
+                    UpdateStudent();
                     break;
                 case "3":
-                    displayTranscript();
+                    addSubjectToStudent();
                     break;
                 case "4":
-                    sortByName();
+                    displayTranscript();
                     break;
                 case "5":
-                    sortByGPA();
+                    sortByName();
                     break;
                 case "6":
-                    archiveStudents();
+                    sortByGPA();
                     break;
                 case "7":
-                    choice = "7";
+                    archiveStudents();
+                    break;
+                case "8":
+                    choice = "8";
                     saveToFile();
                     break;
+
                 default:
-                    System.out.println("****Invalid input. Please enter a number between 1 and 7.****");
+                    System.out.println("****Invalid input. Please enter a number between 1 and 8.****");
             }
 
         }
