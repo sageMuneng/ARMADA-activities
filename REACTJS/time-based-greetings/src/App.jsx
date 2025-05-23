@@ -1,7 +1,7 @@
 import './App.css'
 
 function App() {
-	const currentTime = new Date().getHours(); 
+	const currentTime = new Date().getHours();
 	let greeting;
 	if(currentTime >= 5 && currentTime <= 11){
 		greeting = <h4>Good Morning!</h4>
