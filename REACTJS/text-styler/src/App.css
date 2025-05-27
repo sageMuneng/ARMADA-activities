@@ -1,0 +1,11 @@
+#root{
+  margin: auto;
+  padding: auto;
+  text-align: center;
+}
+
+.buttons{
+  button{
+    margin: 10px;
+  }
+}
